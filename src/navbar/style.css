@@ -1,0 +1,138 @@
+.navbar {
+    height: 50px;
+    width: 100%;
+    background-color: #35A9DB;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+}
+
+.title-navbar a {
+    margin: 0 auto;
+    color: beige;
+    text-decoration: none;
+    list-style: none;
+}
+
+.title-navbar a:hover {
+    color: burlywood;
+}
+
+.list-navbar {
+    list-style: none;
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+}
+
+.list-navbar li a {
+    text-decoration: none;
+    color: beige;
+    font-size: 0.8em;
+}
+
+.list-navbar li a:hover {
+    color: burlywood;
+}
+
+
+/* toggle menu */
+.toggle-menu {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    right: 10px;
+}
+
+.toggle-menu span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: red;
+    border-radius: 3px;
+    transition: 0.5s;
+}
+
+.toggle-menu input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    opacity: 0;
+    cursor: pointer;
+    top: -7px;
+    right: -9px;
+    z-index: 2;
+}
+
+/* animasi toggle menu */
+.toggle-menu span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.toggle-menu span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.toggle-menu input:checked ~ span:nth-child(2) {
+    background-color: lightgreen;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.toggle-menu input:checked ~ span:nth-child(4) {
+    background-color: lightgreen;
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.toggle-menu input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0)
+}
+
+
+
+
+/* RESPONSIVE AREA */
+
+/* ukuran tablet */
+@media screen and (max-width: 768px) {
+    .list-navbar {
+        width: 50%;
+    }
+}
+
+/* ukuran mobile */
+@media screen and (max-width: 576px) {
+    .toggle-menu {
+        display: flex;
+    }
+
+    .list-navbar {
+        position: absolute;
+        flex-direction: column;
+        top: 0;
+        right: 0;
+        background-color: gray;
+        height: 100vh;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: -1;
+        width: 60%;
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+
+    .list-navbar.slide {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+
+

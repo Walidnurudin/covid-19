@@ -1,0 +1,45 @@
+.cont-world {
+    text-align: center;
+    margin: 60px auto;
+}
+
+table {
+    font-family: sans-serif;
+    color: #444;
+    border-collapse: collapse;
+    width: 70%;
+    border: 1px solid #f2f5f7;
+    margin: 0 auto;
+}
+
+/* table thead tr th:nth-child(1) {
+    border-top-left-radius: 10px;
+}
+
+table thead tr th:last-child {
+    border-top-right-radius: 10px;
+} */
+
+table tr th{
+    background: #35A9DB;
+    color: #fff;
+    font-weight: normal;
+}
+
+table , th, td {
+    padding: 8px 20px;
+    text-align: center;
+}
+
+table  tr:hover {
+    background-color: #c5c1c1;
+}
+
+table  tr:nth-child(even) {
+    background-color: #a39f9f;
+    color: white;
+}
+
+table  tr:nth-child(even):hover {
+    background-color: #c5c1c1;
+}
