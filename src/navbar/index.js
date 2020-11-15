@@ -1,45 +1,41 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './style.css';
+import {
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+    NavbarText
+  } from 'reactstrap';
 
-class Navbar extends Component {
+  const Navigasi = () => {
+    const [isOpen, setIsOpen] = useState(false);
+  
+    const toggle = () => setIsOpen(!isOpen);
+  
+    return (
+      <div>
+        <Navbar color="light" light expand="md">
+          <NavbarBrand href="/">reactstrap</NavbarBrand>
+          <NavbarToggler onClick={toggle} />
+          <Collapse isOpen={isOpen} navbar>
+            <Nav className="mr-auto" navbar>
+              <NavItem>
+                <NavLink href="/components/">Components</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+              </NavItem>
+            </Nav>
+            
+            <NavbarText>Simple Text</NavbarText>
+          </Collapse>
+        </Navbar>
+      </div>
+    );
+  }
 
-    openNav = () => {
-        const nav = document.querySelector('.navbar ul')
-
-        nav.classList.toggle('slide')
-    }
-
-    render() {
-        return (
-            <div>
-                <div className="navbar">
-
-                    <p className="title-navbar"><Link to="/">Info Covid19</Link></p>
-
-                    <ul className="list-navbar">
-                        <li>
-                            <Link to="/">Beranda</Link>
-                        </li>
-                        <li>
-                            <Link to="/world">Dunia</Link>
-                        </li>
-                        <li>
-                            <Link to="/about">Tentang</Link>
-                        </li>
-                    </ul>
-
-                    <div className="toggle-menu">
-                        <input type="checkbox" onClick={this.openNav} />
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-
-                </div>
-            </div>
-        );
-    }
-}
-
-export default Navbar;
+export default Navigasi;
