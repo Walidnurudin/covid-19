@@ -32,7 +32,7 @@ class News extends Component {
         if (this.state.loading) {
             return (
                 <Container style={{ textAlign: 'center' }}>
-                    <Spinner style={{ width: '3rem', height: '3rem', marginTop: '50px' }} type="grow" color="primary" />
+                    <Spinner style={{ width: '3rem', height: '3rem', marginTop: '50px' }} type="grow" color="danger" />
                 </Container>
             )
         }
