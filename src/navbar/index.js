@@ -1,41 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState, StrictMode } from 'react';
 import { Link } from 'react-router-dom';
 import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    NavbarText
-  } from 'reactstrap';
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  Container
+} from 'reactstrap';
 
-  const Navigasi = () => {
-    const [isOpen, setIsOpen] = useState(false);
-  
-    const toggle = () => setIsOpen(!isOpen);
-  
-    return (
-      <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
+const Navigasi = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
+
+  return (
+    <StrictMode>
+      <Navbar color="light" light expand="md">
+        <Container>
+          <Link to="/"><NavbarBrand style={{fontWeight: 'bold'}}>COVID<span style={{color: 'red'}}>19</span></NavbarBrand></Link>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
-            <Nav className="mr-auto" navbar>
+
+            <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Components</NavLink>
+                <Link to="/"><NavLink>Home</NavLink></Link>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                <Link to="/news"><NavLink>News</NavLink></Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/about"><NavLink>About</NavLink></Link>
               </NavItem>
             </Nav>
-            
-            <NavbarText>Simple Text</NavbarText>
           </Collapse>
-        </Navbar>
-      </div>
-    );
-  }
+        </Container>
+      </Navbar>
+    </StrictMode>
+  );
+}
 
 export default Navigasi;

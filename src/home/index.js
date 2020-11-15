@@ -22,7 +22,7 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <p>{this.state.data}</p>
+                <p>{this.state.data}, losadjasiojdiosjfiojsdiofj iodsjvi jidjs</p>
             </div>
         )
     }
